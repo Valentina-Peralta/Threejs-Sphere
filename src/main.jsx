@@ -62,9 +62,6 @@ window.addEventListener('resize', () => {
 })
 
 const loop = () => {
-  /*   light.position.x += 0.5
-    light.position.y += 0.2
-    light.position.z += 0.2 */
   controls.update()
   renderer.render(scene, camera)
   window.requestAnimationFrame(loop)
@@ -99,7 +96,7 @@ window.addEventListener("mousemove", (e) => {
     rgb = [
       Math.round((e.pageX / sizes.width) * 255),
       Math.round((e.pageY / sizes.height) * 255),
-      150,
+      0,
     ]
     //Animate
     let newColor = new THREE.Color(`rgb(${rgb.join(",")})`)
@@ -109,6 +106,4 @@ window.addEventListener("mousemove", (e) => {
       b: newColor.b,
     })
   }
-
-  console.log(rgb)
 })
